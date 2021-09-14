@@ -1,14 +1,9 @@
-'use strict';
-
-const express = require('express');
-
-const PORT = 8080;
-const HOST = '127.0.0.1';
-
+const express = require(‘express’);
 const app = express();
-app.get('/', (req, res) => {
-  res.send('NEC Demo App\n');
+app.get(‘/’, function (req, res) {
+  res.send(‘Hello World!’);
 });
-
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+const port = process.env.PORT || 3000;
+app.listen(port, function () {
+  console.log(‘myapp listening on port ‘ + port);
+});
